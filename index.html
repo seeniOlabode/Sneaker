@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>SNEAKERS</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="website-header">
+        <div id="navigation">
+            <button onclick='openMenu()' id='open-menu'>
+                <img id="open-menu-image" src="images/icon-menu.svg" alt="" width="18px">
+            </button>
+            
+            <div id="nav-container" class="nav-collapsed">
+                <div id="nav-content-holder">
+                    <button onclick="closeMenu()" id="close-menu">
+                        <img src="images/icon-close.svg" alt="">
+                    </button>
+
+                    <nav id="website-nav">
+                        <ul id="nav-list">
+                            <li><a href="">Collections</a></li>
+                            <li><a href="">Men</a></li>
+                            <li><a href="">Women</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                </nav>
+                </div>
+            </div>
+        </div>
+
+        <img id="logo" src="images/logo.svg" alt="">
+
+        <button id="cart-header-button" onclick="openCart()">
+            <h1 id="cart-icon-number" class="collapsed"></h1>
+            <img id="header-cart-image" src="images/icon-cart.svg" alt="">
+        </button>
+
+        <img id="account-avatar" src="images/image-avatar.png" alt="" width="30px">
+
+    </header>
+
+    <main id="website-main">
+        <div id="product-photo-display" > <!--class="slideshow displayed  "-->
+            <div id="slide-close-button">
+                <button>
+                    <img src="images/icon-close.svg" alt="" onclick="removeSlideshow()">
+                </button>
+            </div>
+            <button onclick="displayPreviousImage()" id="previous-button"> <!--  -->
+                <img src="images/icon-previous.svg" alt="">
+            </button>
+            <button onclick="displayNextImage()" id="next-button">  <!--  -->
+                <img src="images/icon-next.svg" alt="">
+            </button>
+            <div id="image-container">
+                <img id="slideshow-image" src="images/image-product-1.jpg" alt="">
+            </div>
+
+            <div id="thumbnail-display">
+                <ul id="photos-list">
+                    <li onclick="firstPhoto.display()" ><img id="first-thumb" class="thumbnail active" src="images/image-product-1-thumbnail.jpg" alt=""></li>
+                    <li onclick="secondPhoto.display()"><img id="second-thumb" class="thumbnail" src="images/image-product-2-thumbnail.jpg" alt=""></li>
+                    <li onclick="thirdPhoto.display()"><img id="third-thumb" class="thumbnail" src="images/image-product-3-thumbnail.jpg" alt=""></li>
+                    <li onclick="fourthPhoto.display()"><img id="fourth-thumb" class="thumbnail" src="images/image-product-4-thumbnail.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="product-details">
+
+            <p id="company-name" class="orange">
+                Sneaker Company
+            </p>
+
+            <p id="product-name">
+                Fall Limited Edition Sneakers
+            </p>
+
+            <p id="product-description" class="dark-grayish-blue">
+                These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll weithstand everything the weather can offer.
+            </p>
+
+            <div id="price">
+                <p id="current-price">$125.00</p>
+                <p id="discount-rate" class="orange">50%</p>
+                <p id="former-price" class="grayish-blue">$250.00</p>
+            </div>
+
+            <div id="quantity">
+                <button onclick="decreaseQuantity(ProductsList[0])" id="decrement"> <img src="images/icon-minus.svg" alt=""> </button>
+                <div id="quantity-holder">
+                    <p id="quantity-number">0</p>
+                </div>
+                <button onclick="increaseQuantity(ProductsList[0])" id="increment"> <img src="images/icon-plus.svg" alt=""> </button>
+            </div>
+
+            <button id="add-to-cart" onclick="addToCart(ProductsList[0])"> <img src="images/icon-cart2.svg" alt=""> Add to cart </button>
+
+        </div>
+
+        <div id="cart-holder" class="cart-collapsed">
+            <div id="cart">
+                <h1 id="cart-header"> Cart </h1>
+
+                <p id="empty-cart-text" class="displayed">
+                    Your cart is empty.
+                </p>
+
+                <div id="full-cart" class="full-cart-collapsed">
+                    <ul id="cart-product-list">
+                        <li> 
+                            <img id="cart-product-image" src="" alt="">  
+                            <div id="cart-textbox">
+                                <h2 id="cart-product-name"></h2>
+                                <p id="cart-price"> <span id="cart-product-price"></span> x <span id="cart-product-quantity"></span> <span id="cart-product-total"></span> </p>
+                            </div>
+                            <button onclick="deleteFromCart()" id="cart-delete-button"> <img src="images/icon-delete.svg" alt=""> </button>
+                        </li>
+                    </ul>
+                    <button id="cart-check-out-button"> Checkout </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
